@@ -1,123 +1,76 @@
 # IntentDesk
 
-IntentDesk is an intent driven generative UI workspace where users describe what they want to do in plain English and the interface adapts dynamically based on that intent.
+IntentDesk is an intent driven generative UI workspace where users describe what they want in plain English and the interface adapts dynamically to that intent.
 
-Instead of navigating menus or dashboards users express intent and the UI becomes the response.
+Instead of navigating menus or dashboards, the user simply expresses intent and the interface becomes the response.
 
-This project is built for The UI Strikes Back hackathon and demonstrates intent based interfaces using Generative UI concepts with the Tambo SDK.
+This project was built for The UI Strikes Back hackathon to demonstrate adaptive interfaces using generative UI concepts with the Tambo SDK.
 
-## Problem
+## Core Idea
 
-Most applications require users to learn the interface before they can be productive.
+Most applications require users to learn the interface before becoming productive.
+IntentDesk reverses that interaction model.
 
-Menus tabs and predefined workflows assume prior knowledge and introduce unnecessary friction. Users must adapt to the UI rather than the UI adapting to the user.
+Users express intent in natural language and the interface reshapes itself around that request. The aim is to reduce navigation friction and make interaction conversational rather than menu driven.
 
-## Idea
+## Current Implementation
 
-IntentDesk flips the interaction model.
+Conversational input interprets user intent
+Relevant UI components render dynamically
+Expenses can be added through chat intent or manual form
+Summary and table views update from shared application state
+Landing screen introduces the workspace before interaction
 
-Users express intent in natural language.  
-The interface adapts dynamically based on that intent.
-
-There is no fixed dashboard and no static navigation.  
-The UI itself is generated as a response to user intent.
-
-## How It Works
-
-The user enters a natural language request  
-The intent is interpreted  
-The intent is mapped to a UI state  
-The most relevant UI component is selected  
-The component is rendered dynamically  
-
-Different intents can produce completely different interfaces from the same input field.
+The project currently uses in memory state without persistence.
 
 ## Example Intents
 
-Add an expense  
-Renders an expense input form
+Add an expense
+Show my expenses
+Summarize my spending
 
-Show my expenses  
-Renders a tabular view of expenses
+Each intent produces a different interface layout instead of a fixed dashboard.
 
-Summarize my spending  
-Renders summary cards and insights
+## Registered Components
 
-I am new help me  
-Renders a guidance and onboarding interface
+AddExpenseCard
+ExpenseTable
+SummaryCards
 
-## Registered UI Components
+These components represent different interface states selected dynamically based on user intent.
 
-AddExpenseCard  
-ExpenseTable  
-SummaryCards  
-HelpCard  
+## Technology
 
-Each component represents a distinct interface shape rather than a simple view toggle.
+React
+Tambo Generative UI SDK
+JavaScript
 
-## Tech Stack
+## Scope
 
-React  
-Tambo Generative UI SDK  
-JavaScript  
+This project focuses on frontend generative UI exploration.
+There is no backend persistence yet.
+Primary goal is demonstrating intent to UI mapping and adaptive interface behavior.
 
-## Scope and Limitations
+## Structure Overview
 
-This is a frontend focused project using mock data.
+public contains index.html
 
-There is no backend and no persistent storage.  
-The goal is to demonstrate intent to UI mapping and adaptive interfaces not feature completeness.
+src contains components context state logic UI rendering and application entry files.
 
-## Application Structure
+Key areas include conversational UI rendering expense state handling and adaptive component selection.
 
-intentdesk
-|
-|-- public
-|   |-- index.html
-|
-|-- src
-|   |
-|   |-- components
-|   |   |-- AddExpenseCard.jsx
-|   |   |-- ExpenseTable.jsx
-|   |   |-- SummaryCards.jsx
-|   |   |-- HelpCard.jsx
-|   |
-|   |-- intent
-|   |   |-- intentParser.js
-|   |   |-- intentMapper.js
-|   |   |-- intentConfig.js
-|   |
-|   |-- ui
-|   |   |-- GenerativeRenderer.jsx
-|   |   |-- ComponentRegistry.js
-|   |
-|   |-- data
-|   |   |-- mockExpenses.js
-|   |
-|   |-- App.jsx
-|   |-- main.jsx
-|
-|-- package.json
-|-- README.md
+## What This Demonstrates
 
-## Key Concepts Demonstrated
+Intent driven interaction model
+Dynamic UI composition
+Generative interface experimentation
+Conversational control of application state
 
-Intent driven interaction  
-Dynamic UI composition  
-Generative UI using registered components  
-Single input multiple interface outcomes  
+## Future Direction
 
-## Hackathon Context
-
-Built for The UI Strikes Back hackathon.
-
-The project prioritizes clarity simplicity and Generative UI principles over feature depth.
-
-## Status
-
-Project setup in progress.  
-Core intent mapping and dynamic rendering to be implemented.
+Persistent storage integration
+Expanded intent coverage
+Improved adaptive UI patterns
 
 ## Author
 

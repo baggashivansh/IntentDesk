@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #f7f9fc, #eef2f7);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: #1f2933;
+}
+
+h1, h2 {
+  margin-top: 0;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  margin-bottom: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #dcdfe4;
+  margin-bottom: 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #3b82f6;
+}
+
+button {
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.landing {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.landing h1 {
+  font-size: 38px;
+}
+
+.landing p {
+  max-width: 500px;
+  color: #4b5563;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    margin: 20px auto;
+    padding: 16px;
+  }
+
+  .landing h1 {
+    font-size: 28px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+}
